@@ -1,0 +1,18 @@
+# 统一换行符：仓库内一律 LF，签出时按平台处理
+* text=auto
+
+# 脚本按目标平台固定换行
+*.sh  text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 二进制资源不做换行转换
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.gif  binary
+*.zip  binary
+*.jar  binary
+*.mrpak binary
+*.ogg  binary

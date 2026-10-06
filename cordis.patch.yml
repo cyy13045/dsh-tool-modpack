@@ -1,0 +1,7 @@
+# dsh-tool-modpack — bundle patch layer.
+#
+# 把本包装进 profile 后，此补丁层把插件主入口（lib/index.js，一个普通 Cordis 插件）
+# 插入 loader 根列表。插件自身导出 `inject: ['tools']`，因此在 tools 服务就绪后才 apply。
+- insert:
+    - id: dsh-tool-modpack
+      name: dsh-tool-modpack

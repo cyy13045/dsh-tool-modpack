@@ -1,0 +1,72 @@
+{
+  "name": "dsh-tool-modpack",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness 整合包制作工具集：22 个 modpack_* 工具，覆盖 Minecraft 整合包从规划、环境搭建、模组管理、配置定制、任务书生成、界面设计（含 AI 生图）、本地化、测试验证到多平台发布的完整生命周期。零外部 MCP 服务依赖。",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "cordis",
+    "plugin",
+    "tool",
+    "minecraft",
+    "modpack",
+    "modrinth",
+    "ftb-quests",
+    "resourcepack",
+    "ai-image"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.18.1"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "verify": "pnpm run typecheck && pnpm run test && pnpm run build"
+  },
+  "dependencies": {
+    "sharp": "^0.35.5"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-tools": "^0.1.5-rc.1"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-agent": "0.1.5-rc.1",
+    "@deepseek-ai/dsh-code-runtime": "0.1.5-rc.1",
+    "@deepseek-ai/dsh-invariants": "0.1.5-rc.1",
+    "@deepseek-ai/dsh-llm": "0.1.5-rc.1",
+    "@deepseek-ai/dsh-scope": "0.1.5-rc.1",
+    "@deepseek-ai/dsh-session": "0.1.5-rc.1",
+    "@deepseek-ai/dsh-system-prompt": "0.1.5-rc.1",
+    "@deepseek-ai/dsh-tools": "0.1.5-rc.1",
+    "@deepseek-ai/dsh-user-approval": "0.1.5-rc.1",
+    "@types/node": "^24.19.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11"
+  }
+}
