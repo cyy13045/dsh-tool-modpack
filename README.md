@@ -1,5 +1,8 @@
 # dsh-tool-modpack
 
+[![npm version](https://img.shields.io/npm/v/dsh-tool-modpack.svg)](https://www.npmjs.com/package/dsh-tool-modpack)
+[![license](https://img.shields.io/npm/l/dsh-tool-modpack.svg)](LICENSE)
+
 > DeepSeek Harness（DSH）Tool 插件集：**22 个 `modpack_*` 工具**，覆盖 Minecraft 整合包从规划、环境搭建、
 > 模组管理、配置定制、任务书生成、**界面设计（含 AI 生图）**、本地化、测试验证到多平台发布的完整生命周期。
 > 零 MCP 依赖、零外部构建工具：Modrinth API 与生图 API 都走原生 `fetch`，依赖解析 / 打包 / SNBT 生成 / UI 组装全部在插件内部实现。
@@ -18,9 +21,9 @@ pnpm run build          # tsc → lib/
 pnpm run verify
 
 # 3) 装进 DSH profile（例如 desktop / web）—— 三选一
-dsh plugin --profile desktop add "link:H:\ai\dsh-tool-modpack"          # 本地目录（开发用）
+dsh plugin --profile desktop add dsh-tool-modpack                       # npm（0.1.0 起已发布，推荐）
 dsh plugin --profile desktop add "github:cyy13045/dsh-tool-modpack"     # GitHub 源（随包发布 lib/，免构建）
-dsh plugin --profile desktop add dsh-tool-modpack                       # npm（已发布到 npm 时）
+dsh plugin --profile desktop add "link:H:\ai\dsh-tool-modpack"          # 本地目录（改代码时用）
 
 #    如果被 pnpm 的供应链策略拦下（Lockfile failed supply-chain policy check）：
 #    $env:npm_config_minimum_release_age="0"; dsh plugin --profile desktop add <同上>
