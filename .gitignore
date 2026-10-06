@@ -39,6 +39,7 @@ pids
 .env
 .env.*
 !.env.example
+.secrets.env
 *.pem
 *.key
 

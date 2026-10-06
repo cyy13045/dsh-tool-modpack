@@ -17,10 +17,13 @@ pnpm run build          # tsc → lib/
 # 2) 类型检查 + 全部测试 + 构建（一条命令跑完）
 pnpm run verify
 
-# 3) 装进 DSH profile（例如 desktop / web）
-dsh plugin --profile desktop add "link:H:\ai\dsh-tool-modpack"
+# 3) 装进 DSH profile（例如 desktop / web）—— 三选一
+dsh plugin --profile desktop add "link:H:\ai\dsh-tool-modpack"          # 本地目录（开发用）
+dsh plugin --profile desktop add "github:cyy13045/dsh-tool-modpack"     # GitHub 源（随包发布 lib/，免构建）
+dsh plugin --profile desktop add dsh-tool-modpack                       # npm（已发布到 npm 时）
+
 #    如果被 pnpm 的供应链策略拦下（Lockfile failed supply-chain policy check）：
-#    $env:npm_config_minimum_release_age="0"; dsh plugin --profile desktop add "link:H:\ai\dsh-tool-modpack"
+#    $env:npm_config_minimum_release_age="0"; dsh plugin --profile desktop add <同上>
 ```
 
 重启 / 重载 DSH 后，Agent 即可看到 22 个 `modpack_*` 工具。

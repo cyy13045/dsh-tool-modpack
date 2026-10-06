@@ -14,6 +14,7 @@
   },
   "files": [
     "lib",
+    "src",
     "cordis.patch.yml",
     "README.md",
     "LICENSE"
@@ -36,7 +37,20 @@
     "resourcepack",
     "ai-image"
   ],
+  "author": "cyy13045",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyy13045/dsh-tool-modpack.git"
+  },
+  "homepage": "https://github.com/cyy13045/dsh-tool-modpack#readme",
+  "bugs": {
+    "url": "https://github.com/cyy13045/dsh-tool-modpack/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
   "engines": {
     "node": ">=20.18.1"
   },
@@ -45,7 +59,9 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "verify": "pnpm run typecheck && pnpm run test && pnpm run build"
+    "verify": "pnpm run typecheck && pnpm run test && pnpm run build",
+    "prepublishOnly": "pnpm run verify",
+    "pack:check": "npm pack --dry-run"
   },
   "dependencies": {
     "sharp": "^0.35.5"
