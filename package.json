@@ -1,6 +1,6 @@
 {
   "name": "dsh-tool-modpack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DeepSeek Harness 整合包制作工具集：22 个 modpack_* 工具，覆盖 Minecraft 整合包从规划、环境搭建、模组管理、配置定制、任务书生成、界面设计（含 AI 生图）、本地化、测试验证到多平台发布的完整生命周期。零外部 MCP 服务依赖。",
   "type": "module",
   "main": "lib/index.js",
@@ -68,19 +68,21 @@
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.2",
-    "@deepseek-ai/dsh-tools": "^0.1.5-rc.1"
+    "@deepseek-ai/dsh-tools": ">=0.1.5-rc.1 <0.3.0"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "^4.0.2",
-    "@deepseek-ai/dsh-agent": "0.1.5-rc.1",
-    "@deepseek-ai/dsh-code-runtime": "0.1.5-rc.1",
-    "@deepseek-ai/dsh-invariants": "0.1.5-rc.1",
-    "@deepseek-ai/dsh-llm": "0.1.5-rc.1",
-    "@deepseek-ai/dsh-scope": "0.1.5-rc.1",
-    "@deepseek-ai/dsh-session": "0.1.5-rc.1",
-    "@deepseek-ai/dsh-system-prompt": "0.1.5-rc.1",
-    "@deepseek-ai/dsh-tools": "0.1.5-rc.1",
-    "@deepseek-ai/dsh-user-approval": "0.1.5-rc.1",
+    "@deepseek-ai/cordis": "^4.0.4",
+    "@deepseek-ai/dsh-agent": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-invariants": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-llm": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-ptc-runtime": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-sandbox": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-sandbox-policy": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-scope": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-session": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-system-prompt": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-tools": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-user-approval": "0.2.0-rc.2",
     "@types/node": "^24.19.1",
     "typescript": "^5.9.3",
     "vitest": "^4.1.11"

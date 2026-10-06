@@ -31,6 +31,13 @@ dsh plugin --profile desktop add "link:H:\ai\dsh-tool-modpack"          # 本地
 
 重启 / 重载 DSH 后，Agent 即可看到 22 个 `modpack_*` 工具。
 
+> **运行时兼容性**：本包在 `peerDependencies` 里声明 `@deepseek-ai/dsh-tools: ">=0.1.5-rc.1 <0.3.0"`，
+> 已实测同时兼容 DSH `0.1.5-rc.1` 与 `0.2.0-rc.2` 运行时（类型检查 + 101 个用例 + 构建全绿）。
+> ⚠️ DSH 的安装器会拿**运行时的 DSH 版本**去校验插件 `peerDependencies` 里所有 `@deepseek-ai/dsh` / `@deepseek-ai/dsh-*`
+> 的范围（`semver.satisfies(runtime, range, { includePrerelease: true })`），不匹配会**直接拒绝安装**并提示
+> `installation rejected: ... is incompatible with dsh ...`。给这个插件加依赖时请照着上面那条范围来写，
+> 不要写 `^0.1.5-rc.1` 这类会把 0.2.x 运行时排除掉的窄范围。
+
 **临时试装（不改 profile，只叠加一层 patch）：**
 
 ```powershell
